@@ -34,17 +34,19 @@ finally:
 
 #while pygame.mixer.Sound.get_busy(): 
 i = 0
-print("cardread: " + cardread)
+print("cardread: " + cardread + "-end")
 while i < 10000:
- i += 1 
- if cardread == "1": 
+ i += 1
+ if cardread.strip() == "asdf":
   volCalc = min(1.0, i/10000)
   pygame.mixer.music.set_volume(volCalc)
   #pygame.time.Clock().tick(10)
   print(volCalc)
-  
- if cardread == "2":
-  print(syke)
+ elif cardread.strip() == "qwer":
+  print("syke")
+ else:
+  if(i < 5):
+    print("what")
 
 else:
  print("tock")     
