@@ -34,6 +34,7 @@ finally:
 
 #while pygame.mixer.Sound.get_busy(): 
 i = 0
+print("cardread: " + cardread)
 while i < 10000:
  if cardread == '1': 
   volCalc = min(1.0, i/10000)
