@@ -45,7 +45,7 @@ while i < 10000:
  if cardread == "2":
   print(syke)
 
-i += 1
+ i += 1
 
 else:
  print("tock")     
