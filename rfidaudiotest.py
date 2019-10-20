@@ -41,8 +41,11 @@ while i < 10000:
   pygame.mixer.music.set_volume(volCalc)
   #pygame.time.Clock().tick(10)
   print(volCalc)
-  i += 1
+  
  if cardread == "2":
   print(syke)
+
+i += 1
+
 else:
  print("tock")     
