@@ -33,7 +33,7 @@ finally:
         client.disconnect()
 
         
-def playsong(id)
+def playsong(id):
   client.stop()
   client.clear()
   string track = "spotify:track:" + id
