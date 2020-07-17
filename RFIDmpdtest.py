@@ -13,6 +13,14 @@ thisdict = {
   "JaJaDingDong": "ppcOKYrNRnGQbWc5qI5A1w"
 }
 
+def playsong(id):
+  client.stop()
+  client.clear()
+  track = "spotify:track:" + id
+  print(track)
+  client.add(track)
+  client.play()
+
 client = MPDClient()               # create client object
 client.timeout = 10                # network timeout in seconds (floats allowed), default: None
 client.idletimeout = None          # timeout for fetching the result of the idle command is handled seperately, default: None
@@ -33,11 +41,5 @@ finally:
         client.disconnect()
 
         
-def playsong(id):
-  client.stop()
-  client.clear()
-  track = "spotify:track:" + id
-  print(track)
-  client.add(track)
-  client.play()
+
 
