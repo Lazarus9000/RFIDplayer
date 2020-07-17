@@ -16,7 +16,10 @@ thisdict = {
 def playsong(id):
   client.stop()
   client.clear()
-  track = "spotify:track:" + id
+  print(id)
+  print(thisdict)
+  trackid = thisdict[id]
+  track = "spotify:track:" + trackid
   print(track)
   client.add(track)
   client.play()
@@ -34,7 +37,7 @@ try:
         id, text = reader.read()
         print(id)
         print(text)
-        playsong(text)
+        playsong(text.strip())
 finally:
         GPIO.cleanup()
         client.close()                     # send the close command
