@@ -9,9 +9,8 @@ from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
 
 thisdict = {
-  "PawPatrol": "Ford",
-  "model": "Mustang",
-  "year": 1964
+  "PawPatrol": "7n70tzvZDfdAL1j9XqsAbH",
+  "JaJaDingDong": "ppcOKYrNRnGQbWc5qI5A1w"
 }
 
 client = MPDClient()               # create client object
@@ -27,16 +26,18 @@ try:
         id, text = reader.read()
         print(id)
         print(text)
+        playsong(text)
 finally:
         GPIO.cleanup()
-        
-        
+        client.close()                     # send the close command
+        client.disconnect()
 
+        
+def playsong(id)
+  client.stop()
+  client.clear()
+  string track = "spotify:track:" + id
+  print track
+  client.add(track)
+  client.play()
 
-client.add("spotify:track:4QWRvlXU8dRUobH9YCDrIY")
-print(client.playlist())
-client.play()
-time.sleep(15)
-client.stop()
-client.close()                     # send the close command
-client.disconnect()
