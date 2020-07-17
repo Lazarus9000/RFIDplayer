@@ -36,8 +36,8 @@ finally:
 def playsong(id):
   client.stop()
   client.clear()
-  string track = "spotify:track:" + id
-  print track
+  track = "spotify:track:" + id
+  print(track)
   client.add(track)
   client.play()
 
